@@ -13,13 +13,13 @@
             />
             <div v-if="$v.subredditName.$error">
                 <p class="error-message" v-if="!$v.subredditName.required">
-                    The name of the product is required!
+                    The field is required!
                 </p>
                 <p
                     class="error-message"
                     v-else-if="!$v.subredditName.minLength"
                 >
-                    Minimum value is 0!
+                    Minimum length of this field is 3!
                 </p>
             </div>
             <button class="search-button" @click.prevent="search()">
