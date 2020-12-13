@@ -3,7 +3,7 @@
         <div
             class="post"
             @click.prevent="isContentDisplayed = !isContentDisplayed"
-            :style="isContentDisplayed ? 'border-radius:4px 4px 0px 0px' : ''"
+            :style="isContentDisplayed ? 'border-radius:2px 2px 0px 0px;' : ''"
         >
             <div class="post-description">
                 <svg
@@ -16,7 +16,7 @@
                     width="459px"
                     height="459px"
                     viewBox="0 0 459 459"
-                    style="enable-background:new 0 0 459 459;margin-right: 5px;"
+                    style="enable-background:new 0 0 459 459;"
                     xml:space="preserve"
                 >
                     <g>
@@ -93,7 +93,7 @@
         <div
             class="post-content"
             v-show="isContentDisplayed && subredditPost.selftext"
-            :style="isContentDisplayed ? 'border-radius:0px 0px 4px 4px' : ''"
+            :style="isContentDisplayed ? 'border-radius:0px 0px 2px 2px;' : ''"
         >
             {{ subredditPost.selftext }}
         </div>
@@ -120,40 +120,47 @@ export default {
 
 <style>
 .post {
-    background: #4d3df7;
+    background: #2cb1bc;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 15px;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 5px 5px;
+    border-radius: 2px;
     cursor: pointer;
     color: white;
 }
 .post-description {
-    width: 95%;
-}
-.post-score {
-    width: 5%;
-}
-.post-title {
-    width: 85%;
-    margin-left: 10px;
-}
-.post div:first-child {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
 }
 svg {
     width: 15px;
     height: 15px;
-
     fill: currentColor;
 }
+.post-score,
+#Capa_1 {
+    margin-right: 5px;
+}
+.post-score {
+    width: 20%;
+}
+#Capa_1 {
+    width: 5%;
+}
+.post-title {
+    width: 80%;
+}
+#Capa_2 {
+    width: 5%;
+}
 .post-content {
-    background: #7069fa;
+    background: #38bec9;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 .rotate-forward {
     animation: rotate-forward 0.5s forwards;
@@ -177,18 +184,9 @@ svg {
         transform: rotate(0deg);
     }
 }
-@media only screen and (max-width: 1024px) {
-    .post-title {
-        margin-left: 25px;
-    }
-}
-@media only screen and (max-width: 640px) {
+@media (min-width: 500px) {
     .post-score {
-        margin-left: -2px;
-    }
-    .post {
-        padding: 5px 5px;
-        font-size: 15px;
+        width: 10%;
     }
 }
 </style>

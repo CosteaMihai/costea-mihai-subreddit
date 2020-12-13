@@ -1,4 +1,4 @@
-import axios from 'axios';
+import RedditService from '@/services/RedditService.js';
 
 export const namespaced = true;
 
@@ -19,9 +19,7 @@ export const actions = {
     async fetchPosts({ commit, dispatch }, payload) {
         try {
             dispatch('clearPosts');
-            const post = await axios.get(
-                `https://www.reddit.com/${payload}/top/.json?t=all&limit=10`
-            );
+            const post = await RedditService.getSubredditPosts(payload);
             commit('SET_POSTS', post.data.data.children);
         } catch (error) {
             console.log(error);

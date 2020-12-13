@@ -1,12 +1,13 @@
 <template>
     <button
+        class="suggestion-button"
         @click.prevent="
             fetchPosts(subredditName.data.display_name_prefixed),
                 $emit('selected-button', subredditName.data.id)
         "
         :style="
             selectedButton === subredditName.data.id
-                ? 'background: #3525e6; color: white;'
+                ? 'background: #14919b; color: white;'
                 : ''
         "
     >
@@ -33,21 +34,21 @@ export default {
 </script>
 
 <style>
-button {
+.suggestion-button {
     background: transparent;
-    padding: 7px 15px;
+    padding: 10px 15px;
     margin: 5px 5px;
-    border-radius: 999px;
-    border: 2px solid #3525e6;
-    color: #3525e6;
+    border-radius: 3px;
+    border: 1px solid #14919b;
+    color: #14919b;
     cursor: pointer;
     transition: color 0.3s, background 0.3s;
 }
-button:hover {
-    background: #3525e6;
+.suggestion-button:hover {
+    background: #14919b;
     color: white;
 }
-button:focus {
+.suggestion-button:focus {
     outline: 0;
 }
 </style>
