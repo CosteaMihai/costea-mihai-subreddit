@@ -3,7 +3,6 @@
         placeholder="What do you want to find?"
         :value="value"
         @input="updateValue"
-        v-bind="$attrs"
         v-on="listeners"
         autocomplete="off"
         :style="error ? 'border-color: red' : ''"

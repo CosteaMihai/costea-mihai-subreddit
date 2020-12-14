@@ -11,7 +11,7 @@
                 :error="$v.subredditName.$error"
                 @blur="$v.subredditName.$touch()"
             />
-            <div v-if="$v.subredditName.$error">
+            <div v-if="$v.subredditName.$error" class="error-section">
                 <p class="error-message" v-if="!$v.subredditName.required">
                     The field is required!
                 </p>
@@ -157,6 +157,10 @@ export default {
         top: 0;
         padding: 5px 10px;
         margin: 0;
+    }
+    .error-section {
+        text-align: left;
+        width: 100%;
     }
 }
 </style>
