@@ -28,8 +28,8 @@ export default {
         },
     },
     methods: {
-        updateValue(product) {
-            this.$emit('input', product.target.value);
+        updateValue(name) {
+            this.$emit('input', name.target.value);
         },
     },
 };
